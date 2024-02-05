@@ -1,0 +1,11 @@
+[Unit]
+Description=Runs rclone-sync every 30 minutes
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=30min
+Unit=rclone-sync-gdrive.service
+
+[Install]
+WantedBy=timers.target
+
