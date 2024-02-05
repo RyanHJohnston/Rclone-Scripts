@@ -1,0 +1,1 @@
+ rclone --config /home/ryan/.config/rclone/rclone.conf sync /home/ryan/Undergrad gdrive:Ryan/Undergrad
