@@ -1,18 +1,6 @@
 [Unit]
-Description=Google Drive Rclone mount
-After=network.target
+Description=Rclone sync service for Google Drive
 
 [Service]
-Type=simple
-ExecStart=/usr/bin/rclone mount gdrive: /home/ryan/gdrive \
-	--config=/home/ryan/.config/rclone/rclone.conf \
-	--allow-other \
-	--vfs-cache-mode writes \
-	--drive-allow-import-name-change
-ExecStop=/usr/bin/fusermount -u /home/ryan/gdrive
-Restart=always
-RestartSec=15
-
-[Install]
-WantedBy=multi-user.target
-
+Type=oneshot
+ExecStart=/usr/bin/rclone sync /home/ryan/Undergrad gdrive: /home/ryan/gdrive/Ryan/Undergrad
